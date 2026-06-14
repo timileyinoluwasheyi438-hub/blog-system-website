@@ -4,7 +4,7 @@ services:
     name: blog-system-website
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: "gunicorn userapp.wsgi:application"
+    startCommand: "gunicorn blogpost.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
