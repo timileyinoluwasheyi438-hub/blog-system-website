@@ -3,8 +3,10 @@ services:
   - type: web
     name: blog-system-website
     runtime: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
     startCommand: "gunicorn blogpost.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
+      - key: DEBUG 
+        value: false
