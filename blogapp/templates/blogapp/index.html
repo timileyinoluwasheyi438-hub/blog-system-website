@@ -122,8 +122,8 @@
     font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 900;
-    color: #c8a84b;
-    text-shadow: 0 2px 30px rgba(0,0,0,0.8);
+    color: white;
+    text-shadow: 0 8px 8px rgba(240, 176, 0, 0.8);
     margin-bottom: 16px;
     letter-spacing: -.01em;
   }
@@ -196,7 +196,7 @@
 
 <!-- HOMEPAGE HERO -->
 <section class="homepage-hero">
-  <video class="globe-bg" src="/static/videos/vid.mp4" autoplay muted loop playsinline></video>
+  <video class="globe-bg" src="https://res.cloudinary.com/dkv2gwvfx/video/upload/v1781472917/video_3_nrwjiv.mp4" autoplay muted loop playsinline></video>
 
   <div class="hero-content">
     <h1 class="hero-title">Welcome to Blog System</h1>
@@ -225,14 +225,22 @@
 
 {% block extra_scripts %}
 <script>
-  // Dismiss splash after animations complete (~3s)
-  window.addEventListener('load', () => {
+window.addEventListener('load', () => {
+  const splash = document.getElementById('splash');
+  
+  // If already seen this session, skip immediately
+  if (sessionStorage.getItem('splashSeen')) {
+    splash.remove();
+    return;
+  }
+
+  setTimeout(() => {
+    splash.classList.add('hide');
     setTimeout(() => {
-      const splash = document.getElementById('splash');
-      splash.classList.add('hide');
-      // fully remove from DOM after fade
-      setTimeout(() => splash.remove(), 800);
-    }, 3000);
-  });
+      splash.remove();
+      sessionStorage.setItem('splashSeen', 'true'); // mark as seen
+    }, 800);
+  }, 3000);
+});
 </script>
 {% endblock %}
