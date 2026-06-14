@@ -1,0 +1,60 @@
+
+{% extends 'blogapp/base.html' %}
+{% load static %}
+{% block title %}Write a Post — BlogSystem{% endblock %}
+{% block nav_create %}class="active"{% endblock %}
+
+{% block content %}
+<div class="page-body">
+
+  <p class="section-eyebrow">Editorial Desk</p>
+  <h1 class="section-title">Write a Post</h1>
+  <hr class="section-rule">
+
+  <div class="editorial-form">
+    <div class="editorial-form-header">New Article Submission</div>
+    <form class="editorial-form-body" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="form-row">
+        <label for="post-header">Post Headline</label>
+        <input type="text" id="post-header" name="post-header" placeholder="Enter a compelling headline…" required />
+      </div>
+
+      <div class="form-row">
+        <label for="post-body">Article Body</label>
+        <textarea id="post-body" name="post-body" placeholder="Write your article here…" required></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="post-author">Author Name</label>
+        <input type="text" id="post-author" name="post-author" placeholder="Your name or pen name…" required />
+      </div>
+
+      <div class="form-row">
+        <label>Cover Image</label>
+        <label class="form-file-label" for="post-image">
+          📎 &nbsp; Choose an image file (JPG, PNG, WEBP)
+        </label>
+        <input type="file" id="post-image" name="post-image" accept="image/*" style="margin-top:8px;" />
+        <span id="file-name" style="font-size:12px; color:var(--gray-mid); margin-top:4px;"></span>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Publish Article</button>
+        <a href="/all-posts/" class="btn btn-outline">Cancel</a>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<script>
+  const fileInput = document.getElementById('post-image');
+  fileInput?.addEventListener('change', () => {
+    if (fileInput.files[0]) {
+      document.getElementById('file-name').textContent = '✓ ' + fileInput.files[0].name;
+    }
+  });
+</script>
+{% endblock %}

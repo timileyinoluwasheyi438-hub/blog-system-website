@@ -1,0 +1,22 @@
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<h2>   {% block formname_block %}{% endblock formname_block %}</h2>
+<labe>
+     Post Header
+<input type="text"  placeholder="Type here....." name="post-header">
+</label>
+<labe>
+ Post Body
+<textarea placeholder="typr here.." name="post-body"></textarea>
+</label>
+<labe>
+    Author
+<input type="text" placeholder="Type here....."  name="post-author" >
+</label>
+<labe>
+    <img src="" class="preview-image" alt="">
+     Post image
+<input type="file" placeholder="Type here....." namw="post-image">
+</label>
+<button>Submit</button>
+</form>

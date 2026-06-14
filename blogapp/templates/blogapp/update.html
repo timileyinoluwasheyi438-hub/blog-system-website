@@ -1,0 +1,27 @@
+{% extends "blogapp/base.html" %}
+{% block title %}Update Post{% endblock title %}
+{% block content_block %}
+
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<h2>Update Post </h2>
+<labe>
+     Post Header
+<input type="text"  placeholder="Type here....." name="post-header" value="{{post.blog_header}}">
+</label>
+<labe>
+ Post Body
+<textarea placeholder="typr here.." name="post-body" value="{{post.blog_body}}"></textarea>
+</label>
+<labe>
+    Author
+<input type="text" placeholder="Type here....."  name="post-author"value="{{post.author}}" >
+</label>
+<labe>
+    <img src="" class="preview-image" alt="">
+     Post image
+<input type="file" placeholder="Type here....." namw="post-image">
+</label>
+<button>Submit</button>
+</form>
+{% endblock content_block %}

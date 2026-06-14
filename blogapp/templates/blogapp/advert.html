@@ -1,0 +1,123 @@
+{% extends 'blogapp/base.html' %}
+{% block title %}Advertise — BlogSystem{% endblock %}
+{% block nav_advert %}class="active"{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<div style="background:var(--black); color:var(--white); padding:80px 60px; text-align:center;">
+  <p style="font-family:var(--font-condensed); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:12px;">Partner With Us</p>
+  <h1 style="font-family:var(--font-display); font-size:clamp(2.5rem,5vw,5rem); font-weight:900; line-height:1.05; margin-bottom:20px;">Reach readers who<br>actually read.</h1>
+  <p style="font-size:1.1rem; color:#ccc; max-width:580px; margin:0 auto; line-height:1.7;">BlogSystem connects brands with an engaged, curious audience. No bots, no passive scrollers — just real people who chose to be here.</p>
+</div>
+
+<!-- REACH STATS -->
+<div style="background:var(--red); display:flex; justify-content:center; flex-wrap:wrap;" overflow="hidden">
+  <div style="padding:28px 60px; text-align:center; border-right:1px solid rgba(255,255,255,0.2);">
+    <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:900; color:#fff;">5K+</div>
+    <div style="font-family:var(--font-condensed); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Monthly Readers</div>
+  </div>
+  <div style="padding:28px 60px; text-align:center; border-right:1px solid rgba(255,255,255,0.2);">
+    <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:900; color:#fff;">78%</div>
+    <div style="font-family:var(--font-condensed); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Return Visitors</div>
+  </div>
+  <div style="padding:28px 60px; text-align:center; border-right:1px solid rgba(255,255,255,0.2);">
+    <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:900; color:#fff;">4min</div>
+    <div style="font-family:var(--font-condensed); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Avg. Time on Page</div>
+  </div>
+  <div style="padding:28px 60px; text-align:center;">
+    <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:900; color:#fff;">NG</div>
+    <div style="font-family:var(--font-condensed); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Primary Audience</div>
+  </div>
+</div>
+
+<!-- AD PACKAGES -->
+<div style="padding:80px 60px; background:var(--cream);">
+  <p style="font-family:var(--font-condensed); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:12px; text-align:center;">Ad Packages</p>
+  <h2 style="font-family:var(--font-display); font-size:2.5rem; font-weight:900; text-align:center; margin-bottom:48px;">Choose your reach.</h2>
+
+<div class="ad-packages-grid" style="display:grid; gap:24px; max-width:1000px; margin:0 auto;">
+
+
+    <!-- Basic -->
+    <div style="background:var(--white); border:2px solid var(--black); padding:40px 32px;">
+      <p style="font-family:var(--font-condensed); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gray-mid); margin-bottom:12px;">Starter</p>
+      <div style="font-family:var(--font-display); font-size:3rem; font-weight:900; margin-bottom:4px;">₦15k</div>
+      <p style="font-size:12px; color:var(--gray-mid); margin-bottom:28px;">per month</p>
+      <ul style="list-style:none; font-size:14px; color:var(--gray-dark); line-height:2.2; margin-bottom:32px;">
+        <li>✓ &nbsp; Banner ad on All Posts page</li>
+        <li>✓ &nbsp; 1 sponsored post</li>
+        <li>✓ &nbsp; Logo in footer</li>
+        <li style="color:#ccc;">✗ &nbsp; Homepage placement</li>
+        <li style="color:#ccc;">✗ &nbsp; Newsletter mention</li>
+      </ul>
+      <a href="mailto:advertise@blogsystem.com" class="btn btn-outline" style="width:100%; text-align:center; display:block;">Get Started</a>
+    </div>
+
+    <!-- Pro -->
+    <div style="background:var(--black); border:2px solid var(--black); padding:40px 32px; position:relative;">
+      <div style="position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--red); color:#fff; font-family:var(--font-condensed); font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; padding:4px 16px;">Most Popular</div>
+      <p style="font-family:var(--font-condensed); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:12px;">Growth</p>
+      <div style="font-family:var(--font-display); font-size:3rem; font-weight:900; color:#fff; margin-bottom:4px;">₦35k</div>
+      <p style="font-size:12px; color:#666; margin-bottom:28px;">per month</p>
+      <ul style="list-style:none; font-size:14px; color:#ccc; line-height:2.2; margin-bottom:32px;">
+        <li>✓ &nbsp; Banner ad on All Posts page</li>
+        <li>✓ &nbsp; 3 sponsored posts</li>
+        <li>✓ &nbsp; Logo in footer</li>
+        <li>✓ &nbsp; Homepage placement</li>
+        <li style="color:#666;">✗ &nbsp; Newsletter mention</li>
+      </ul>
+      <a href="mailto:advertise@blogsystem.com" class="btn btn-primary" style="width:100%; text-align:center; display:block;">Get Started</a>
+    </div>
+
+    <!-- Enterprise -->
+    <div style="background:var(--white); border:2px solid var(--black); padding:40px 32px;">
+      <p style="font-family:var(--font-condensed); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gray-mid); margin-bottom:12px;">Premium</p>
+      <div style="font-family:var(--font-display); font-size:3rem; font-weight:900; margin-bottom:4px;">₦70k</div>
+      <p style="font-size:12px; color:var(--gray-mid); margin-bottom:28px;">per month</p>
+      <ul style="list-style:none; font-size:14px; color:var(--gray-dark); line-height:2.2; margin-bottom:32px;">
+        <li>✓ &nbsp; Banner ad on All Posts page</li>
+        <li>✓ &nbsp; Unlimited sponsored posts</li>
+        <li>✓ &nbsp; Logo in footer</li>
+        <li>✓ &nbsp; Homepage placement</li>
+        <li>✓ &nbsp; Newsletter mention</li>
+      </ul>
+      <a href="mailto:advertise@blogsystem.com" class="btn btn-outline" style="width:100%; text-align:center; display:block;">Get Started</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div style="background:var(--white); padding:80px 60px; border-top:3px solid var(--black);">
+  <p style="font-family:var(--font-condensed); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:12px; text-align:center;">Partner Reviews</p>
+  <h2 style="font-family:var(--font-display); font-size:2.5rem; font-weight:900; text-align:center; margin-bottom:48px;">Brands that trust us.</h2>
+
+  <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:900px; margin:0 auto;">
+
+    <div style="border:1px solid var(--gray-light); padding:32px;">
+      <div style="color:var(--red); font-size:18px; margin-bottom:16px;">★★★★★</div>
+      <p style="font-size:15px; color:var(--gray-dark); line-height:1.8; margin-bottom:20px; font-style:italic;">"Our sponsored post got incredible engagement. The audience is highly targeted and the team made it seamless from start to finish."</p>
+      <div style="font-family:var(--font-condensed); font-weight:700; font-size:13px; letter-spacing:.05em;">Chidi E.</div>
+      <div style="font-size:11px; color:var(--gray-mid); text-transform:uppercase; letter-spacing:.08em;">Marketing Lead, TechBrand NG</div>
+    </div>
+
+    <div style="border:1px solid var(--gray-light); padding:32px;">
+      <div style="color:var(--red); font-size:18px; margin-bottom:16px;">★★★★★</div>
+      <p style="font-size:15px; color:var(--gray-dark); line-height:1.8; margin-bottom:20px; font-style:italic;">"We ran a 3-month campaign and saw real ROI. BlogSystem readers actually convert — they're not just scrolling past your ad."</p>
+      <div style="font-family:var(--font-condensed); font-weight:700; font-size:13px; letter-spacing:.05em;">Funmi A.</div>
+      <div style="font-size:11px; color:var(--gray-mid); text-transform:uppercase; letter-spacing:.08em;">Founder, StyleHouse Lagos</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT CTA -->
+<div style="background:var(--black); padding:80px 60px; text-align:center;">
+  <p style="font-family:var(--font-condensed); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:12px;">Get In Touch</p>
+  <h2 style="font-family:var(--font-display); font-size:3rem; font-weight:900; color:#fff; margin-bottom:20px;">Ready to advertise?</h2>
+  <p style="font-size:16px; color:#aaa; max-width:480px; margin:0 auto 36px; line-height:1.7;">Send us a message and we'll get back to you within 24 hours with a custom proposal.</p>
+  <a href="mailto:advertise@blogsystem.com" class="btn btn-primary" style="font-size:14px; padding:16px 40px;">Email Us Now</a>
+</div>
+
+{% endblock %}

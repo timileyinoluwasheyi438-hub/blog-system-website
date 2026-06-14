@@ -1,0 +1,65 @@
+
+{% extends 'blogapp/base.html' %}
+{% load static %}
+{% block title %}All Posts — BlogSystem{% endblock %}
+{% block nav_allposts %}class="active"{% endblock %}
+
+{% block content %}
+<div class="page-body">
+
+  <p class="section-eyebrow">Latest Coverage</p>
+  <h1 class="section-title">All Posts</h1>
+  <hr class="section-rule">
+  <p class="section-meta">
+    {{ all_post|length }} article{{ all_post|length|pluralize }}
+    <span>&middot;</span>
+    Showing all categories
+  </p>
+
+  {% if all_post %}
+  <div class="posts-grid">
+    {% for post in all_post %}
+    <article class="post-card">
+
+      {% if post.post_image %}
+     
+        <img src="{{ post.post_image.url }}" alt="{{ post.blog_header }}" class="post-card-img" />
+      {% else %}
+        <div class="post-card-img-placeholder">No Image</div>
+      {% endif %}
+
+      <div class="post-card-body">
+        <span class="post-card-tag">Featured</span>
+
+        <p class="post-card-title">{{ post.blog_header }}</p>
+
+        <p class="post-card-excerpt">
+          {{ post.blog_body|truncatewords:22 }}
+        </p>
+
+        <div class="post-card-footer">
+          <div class="post-card-byline">
+            By <strong>{{ post.author }}</strong><br>
+            {{ post.post_date|date:"M d, Y" }}
+          </div>
+          <div class="post-card-actions">
+            <a href="{% url 'update-post' post.id %}" class="btn btn-outline" style="padding:6px 14px;font-size:11px;">Update</a>
+            <a href="{% url 'delete-post' post.id %}" class="btn btn-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+
+    </article>
+    {% endfor %}
+  </div>
+
+  {% else %}
+  <div style="text-align:center; padding: 80px 20px; border: 2px solid var(--gray-light); background: var(--white);">
+    <p class="section-eyebrow" style="margin-bottom:16px;">Nothing here yet</p>
+    <h2 style="font-family:var(--font-display); font-size:2rem; margin-bottom:20px;">The page is blank — be the first.</h2>
+    <a href="/create-post/" class="btn btn-primary">Write a Post</a>
+  </div>
+  {% endif %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,246 @@
+{% extends 'blogapp/base.html' %}
+{% block title %}About Us — BlogSystem{% endblock %}
+{% block nav_about %}class="active"{% endblock %}
+
+{% block extra_head %}
+<style>
+  .review-card { background: #111; border: 1px solid #222; padding: 32px; }
+  .reviewer-photo {
+    width: 56px; height: 56px; border-radius: 50%;
+    object-fit: cover; border: 2px solid var(--red);
+  }
+  .reviewer-initials {
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-condensed); font-weight: 700;
+    font-size: 20px; color: #fff; flex-shrink: 0;
+  }
+  .team-card {
+    background: var(--white);
+    border: 2px solid var(--black);
+    overflow: hidden;
+    transition: transform .2s;
+  }
+  .team-card:hover { transform: translateY(-4px); }
+  .team-photo {
+    width: 100%; aspect-ratio: 1;
+    object-fit: cover; object-position: top;
+    display: block; background: var(--gray-light);
+  }
+  .team-initials {
+    width: 100%; aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 4rem;
+    font-weight: 900; color: #fff;
+  }
+  @media(max-width:768px) {
+    .about-two-col { grid-template-columns: 1fr !important; }
+    .stats-bar { flex-direction: column; }
+    .reviews-grid { grid-template-columns: 1fr !important; }
+    .team-grid { grid-template-columns: repeat(2,1fr) !important; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<div style="background:var(--black); color:var(--white); padding:100px 60px 80px;">
+  <p style="font-family:var(--font-condensed); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:16px;">Est. 2024 · Vol. I · Digital Edition</p>
+  <h1 style="font-family:var(--font-display); font-size:clamp(3rem,6vw,6rem); font-weight:900; line-height:1.0; margin-bottom:24px;">We publish ideas<br>worth your time.</h1>
+  <p style="font-size:1.2rem; color:#aaa; max-width:600px; line-height:1.8; margin-bottom:40px;">BlogSystem is an independent digital publication built on one belief — the internet deserves better writing. No algorithms. No clickbait. Just real people, real thoughts, real ideas.</p>
+  <div style="display:flex; gap:16px; flex-wrap:wrap;">
+    <a href="/create-post/" class="btn btn-primary" style="padding:14px 32px; font-size:13px;">Start Writing</a>
+    <a href="/all-posts/" class="btn btn-outline" style="padding:14px 32px; font-size:13px; color:#fff; border-color:#fff;">Read Posts</a>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar" style="background:var(--red); display:flex; justify-content:center; flex-wrap:wrap;">
+  <div style="padding:32px 60px; text-align:center; border-right:1px solid rgba(255,255,255,0.2);">
+    <div style="font-family:var(--font-display); font-size:3rem; font-weight:900; color:#fff; line-height:1;">10+</div>
+    <div style="font-family:var(--font-condensed); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-top:6px;">Articles Published</div>
+  </div>
+  <div style="padding:32px 60px; text-align:center; border-right:1px solid rgba(255,255,255,0.2);">
+    <div style="font-family:var(--font-display); font-size:3rem; font-weight:900; color:#fff; line-height:1;">5+</div>
+    <div style="font-family:var(--font-condensed); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-top:6px;">Active Writers</div>
+  </div>
+  <div style="padding:32px 60px; text-align:center; border-right:1px solid rgba(255,255,255,0.2);">
+    <div style="font-family:var(--font-display); font-size:3rem; font-weight:900; color:#fff; line-height:1;">2024</div>
+    <div style="font-family:var(--font-condensed); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-top:6px;">Year Founded</div>
+  </div>
+  <div style="padding:32px 60px; text-align:center;">
+    <div style="font-family:var(--font-display); font-size:3rem; font-weight:900; color:#fff; line-height:1;">100%</div>
+    <div style="font-family:var(--font-condensed); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-top:6px;">Independent</div>
+  </div>
+</div>
+
+<!-- OUR STORY -->
+<div style="padding:80px 60px; background:var(--cream);">
+  <div class="about-two-col" style="display:grid; grid-template-columns:1fr 360px; gap:60px; align-items:start;">
+    <div>
+      <p style="font-family:var(--font-condensed); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:12px;">Our Story</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.8rem); font-weight:900; margin-bottom:28px; line-height:1.1;">Started with a blank page<br>and a lot of opinions.</h2>
+      <p style="font-size:15px; line-height:1.9; color:var(--gray-dark); margin-bottom:20px;">BlogSystem was born out of frustration. Frustration with news feeds optimized for rage, with articles written to rank rather than to inform, with a web that increasingly felt hostile to actual thought.</p>
+      <p style="font-size:15px; line-height:1.9; color:var(--gray-dark); margin-bottom:20px;">So we built something different. A place where writers aren't chasing metrics, readers aren't being tracked, and ideas get to exist on their own terms. We cover technology, culture, opinion, and everyday life — not because it's trending, but because it matters.</p>
+      <p style="font-size:15px; line-height:1.9; color:var(--gray-dark); margin-bottom:20px;">We're proudly Nigerian, proudly independent, and proudly stubborn about quality. Every post on this platform was written by a real person who had something real to say.</p>
+      <p style="font-size:15px; line-height:1.9; color:var(--gray-dark); margin-bottom:36px;">If you've got something worth saying — about tech, life, culture, anything — this is your platform too. We don't gatekeep. Just write well and hit publish.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="/create-post/" class="btn btn-primary">Write for Us</a>
+        <a href="/all-posts/" class="btn btn-outline">Browse All Posts</a>
+      </div>
+    </div>
+
+    <aside style="position:sticky; top:120px;">
+      <div style="background:var(--white); border:2px solid var(--black);">
+        <div style="background:var(--black); color:#fff; padding:14px 20px; font-family:var(--font-condensed); font-size:11px; font-weight:700; letter-spacing:.15em; text-transform:uppercase;">The Facts</div>
+        <div style="padding:24px;">
+          <div style="border-bottom:1px solid var(--gray-light); padding-bottom:16px; margin-bottom:16px;">
+            <div style="font-family:var(--font-condensed); font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:8px;">Founded</div>
+            <p style="font-size:14px; color:var(--gray-dark);">2024 · Lagos, Nigeria</p>
+          </div>
+          <div style="border-bottom:1px solid var(--gray-light); padding-bottom:16px; margin-bottom:16px;">
+            <div style="font-family:var(--font-condensed); font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:8px;">Coverage</div>
+            <p style="font-size:14px; color:var(--gray-dark); line-height:1.8;">Technology · Culture<br>Opinion · Lifestyle<br>Design · Society</p>
+          </div>
+          <div style="border-bottom:1px solid var(--gray-light); padding-bottom:16px; margin-bottom:16px;">
+            <div style="font-family:var(--font-condensed); font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:8px;">Model</div>
+            <p style="font-size:14px; color:var(--gray-dark);">Independent · Open submissions · No paywalls</p>
+          </div>
+          <div>
+            <div style="font-family:var(--font-condensed); font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:8px;">Contact</div>
+            <p style="font-size:14px; color:var(--gray-dark);">Use the <a href="/contact" style="color:var(--red);">contact page</a> for press, partnerships, or just to say hi.</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- WHAT WE BELIEVE -->
+<div style="background:var(--white); padding:80px 60px; border-top:3px solid var(--black);">
+  <p style="font-family:var(--font-condensed); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:12px; text-align:center;">Our Values</p>
+  <h2 style="font-family:var(--font-display); font-size:2.5rem; font-weight:900; text-align:center; margin-bottom:48px;">What we believe in.</h2>
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:32px; max-width:1000px; margin:0 auto;">
+    <div style="border-top:3px solid var(--red); padding-top:24px;">
+      <h3 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; margin-bottom:12px;">Honesty over clicks</h3>
+      <p style="font-size:14px; color:var(--gray-dark); line-height:1.8;">We never write to provoke, we write to inform. Every post should leave you knowing more than when you started.</p>
+    </div>
+    <div style="border-top:3px solid var(--red); padding-top:24px;">
+      <h3 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; margin-bottom:12px;">Writers first</h3>
+      <p style="font-size:14px; color:var(--gray-dark); line-height:1.8;">We built this for people with something to say — not for advertisers, not for algorithms. You write it, we publish it.</p>
+    </div>
+    <div style="border-top:3px solid var(--red); padding-top:24px;">
+      <h3 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; margin-bottom:12px;">Open always</h3>
+      <p style="font-size:14px; color:var(--gray-dark); line-height:1.8;">No paywalls, no gatekeepers, no membership fees. Good writing should be free to read and free to publish.</p>
+    </div>
+  </div>
+</div>
+
+<!-- READER REVIEWS -->
+<div style="background:var(--black); padding:80px 60px;">
+  <p style="font-family:var(--font-condensed); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:12px; text-align:center;">Community</p>
+  <h2 style="font-family:var(--font-display); font-size:2.5rem; font-weight:900; color:var(--white); text-align:center; margin-bottom:16px;">What our readers say.</h2>
+  <p style="text-align:center; color:#666; font-size:14px; margin-bottom:48px; font-family:var(--font-condensed); letter-spacing:.05em;">Real people. Real opinions. No paid reviews.</p>
+
+  <div class="reviews-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+
+    <div class="review-card">
+      <div style="color:var(--red); font-size:18px; margin-bottom:20px; letter-spacing:2px;">★★★★★</div>
+      <p style="font-size:15px; color:#ccc; line-height:1.85; margin-bottom:24px; font-style:italic;">"Finally a blog that doesn't feel like it was written by an algorithm. Real thoughts, real writers, real content. I check it every single morning with my coffee."</p>
+      <div style="display:flex; align-items:center; gap:14px; border-top:1px solid #222; padding-top:20px;">
+        <imgsrc="static/images/a.jpeg" alt="Adaeze" class="reviewer-photo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="reviewer-initials" style="background:#c0392b; display:none;">A</div>
+        <div>
+          <div style="font-family:var(--font-condensed); font-weight:700; color:#fff; font-size:13px; letter-spacing:.05em;">Adaeze O.</div>
+          <div style="font-size:11px; color:#555; text-transform:uppercase; letter-spacing:.08em; margin-top:2px;">Lagos, Nigeria</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div style="color:var(--red); font-size:18px; margin-bottom:20px; letter-spacing:2px;">★★★★★</div>
+      <p style="font-size:15px; color:#ccc; line-height:1.85; margin-bottom:24px; font-style:italic;">"I submitted my first post and it was live the same day. The platform is clean, fast, and actually makes writing feel exciting again. Highly recommend."</p>
+      <div style="display:flex; align-items:center; gap:14px; border-top:1px solid #222; padding-top:20px;">
+        <img src="static/images/b.jpeg" alt="Korede" class="reviewer-photo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="reviewer-initials" style="background:#1a6b3c; display:none;">K</div>
+        <div>
+          <div style="font-family:var(--font-condensed); font-weight:700; color:#fff; font-size:13px; letter-spacing:.05em;">Korede B.</div>
+          <div style="font-size:11px; color:#555; text-transform:uppercase; letter-spacing:.08em; margin-top:2px;">Abuja, Nigeria</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div style="color:var(--red); font-size:18px; margin-bottom:20px; letter-spacing:2px;">★★★★☆</div>
+      <p style="font-size:15px; color:#ccc; line-height:1.85; margin-bottom:24px; font-style:italic;">"The design is beautiful and the content is genuinely diverse. Love how it covers everything from tech to culture without feeling scattered."</p>
+      <div style="display:flex; align-items:center; gap:14px; border-top:1px solid #222; padding-top:20px;">
+        <img src="static/images/c.jpeg" alt="Tunde" class="reviewer-photo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="reviewer-initials" style="background:#1a3a6b; display:none;">T</div>
+        <div>
+          <div style="font-family:var(--font-condensed); font-weight:700; color:#fff; font-size:13px; letter-spacing:.05em;">Tunde M.</div>
+          <div style="font-size:11px; color:#555; text-transform:uppercase; letter-spacing:.08em; margin-top:2px;">Port Harcourt, Nigeria</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div style="color:var(--red); font-size:18px; margin-bottom:20px; letter-spacing:2px;">★★★★★</div>
+      <p style="font-size:15px; color:#ccc; line-height:1.85; margin-bottom:24px; font-style:italic;">"I've been writing online for years and this is the first platform that felt like it respected my time as a writer. No complicated submission process — just write and go."</p>
+      <div style="display:flex; align-items:center; gap:14px; border-top:1px solid #222; padding-top:20px;">
+        <img src="static/images/d.jpeg" alt="Sola" class="reviewer-photo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="reviewer-initials" style="background:#6b3a1a; display:none;">S</div>
+        <div>
+          <div style="font-family:var(--font-condensed); font-weight:700; color:#fff; font-size:13px; letter-spacing:.05em;">Sola A.</div>
+          <div style="font-size:11px; color:#555; text-transform:uppercase; letter-spacing:.08em; margin-top:2px;">Ibadan, Nigeria</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div style="color:var(--red); font-size:18px; margin-bottom:20px; letter-spacing:2px;">★★★★★</div>
+      <p style="font-size:15px; color:#ccc; line-height:1.85; margin-bottom:24px; font-style:italic;">"My go-to for opinion pieces. The writers here actually have something to say — not just hot takes for engagement. Refreshing in 2026."</p>
+      <div style="display:flex; align-items:center; gap:14px; border-top:1px solid #222; padding-top:20px;">
+        <img src="static/images/b.jpeg" alt="Dami" class="reviewer-photo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="reviewer-initials" style="background:#4a1a6b; display:none;">D</div>
+        <div>
+          <div style="font-family:var(--font-condensed); font-weight:700; color:#fff; font-size:13px; letter-spacing:.05em;">Dami F.</div>
+          <div style="font-size:11px; color:#555; text-transform:uppercase; letter-spacing:.08em; margin-top:2px;">Enugu, Nigeria</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div style="color:var(--red); font-size:18px; margin-bottom:20px; letter-spacing:2px;">★★★★★</div>
+      <p style="font-size:15px; color:#ccc; line-height:1.85; margin-bottom:24px; font-style:italic;">"Shared one of my posts here and got more engagement than anything I've posted on social media in months. The readers actually interact."</p>
+      <div style="display:flex; align-items:center; gap:14px; border-top:1px solid #222; padding-top:20px;">
+        <img src="static/images/a.jpeg" alt="Emeka" class="reviewer-photo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="reviewer-initials" style="background:#1a5a1a; display:none;">E</div>
+        <div>
+          <div style="font-family:var(--font-condensed); font-weight:700; color:#fff; font-size:13px; letter-spacing:.05em;">Emeka C.</div>
+          <div style="font-size:11px; color:#555; text-transform:uppercase; letter-spacing:.08em; margin-top:2px;">Benin City, Nigeria</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CTA -->
+<div style="padding:100px 60px; text-align:center; background:var(--cream); border-top:3px solid var(--black);">
+  <p style="font-family:var(--font-condensed); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:16px;">Join The Community</p>
+  <h2 style="font-family:var(--font-display); font-size:clamp(2rem,4vw,4rem); font-weight:900; margin-bottom:20px; line-height:1.1;">Your voice belongs here.</h2>
+  <p style="font-size:16px; color:var(--gray-dark); max-width:500px; margin:0 auto 40px; line-height:1.8;">No gatekeepers. No algorithm. No fee. Just write something worth reading and hit publish — your audience is already here waiting.</p>
+  <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+    <a href="/create-post/" class="btn btn-primary" style="font-size:14px; padding:16px 40px;">Start Writing Today</a>
+    <a href="/contact" class="btn btn-outline" style="font-size:14px; padding:16px 40px;">Get In Touch</a>
+  </div>
+</div>
+
+{% endblock %}
